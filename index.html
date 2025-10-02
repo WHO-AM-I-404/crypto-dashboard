@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Kripto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ikon dari Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Library Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- File CSS Eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Dashboard Kripto <span class="live-indicator"></span></h1>
+            <p>Pantau pasar cryptocurrency global secara real-time</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- DASHBOARD VIEW -->
+        <section id="dashboard-view">
+            <section class="market-overview" id="market-overview">
+                <!-- Akan diisi oleh JS -->
+            </section>
+
+            <section class="chart-section">
+                <h2>Grafik Harga Real-Time (Top 10)</h2>
+                <div class="chart-container">
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </section>
+
+            <section class="table-section">
+                <h2>Peringkat Pasar Kripto (Top 100)</h2>
+                <div id="loading-spinner"><div class="spinner"></div></div>
+                <table class="crypto-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nama</th>
+                            <th>Harga</th>
+                            <th>24h %</th>
+                            <th>Kap. Pasar</th>
+                            <th>7 Hari Terakhir</th>
+                        </tr>
+                    </thead>
+                    <tbody id="crypto-table-body">
+                        <!-- Akan diisi oleh JS -->
+                    </tbody>
+                </table>
+            </section>
+        </section>
+
+        <!-- DETAIL VIEW -->
+        <section id="detail-view" class="hidden">
+            <button id="back-button" class="back-button">
+                <i class="fas fa-arrow-left"></i> Kembali ke Dashboard
+            </button>
+            <div id="loading-spinner-detail"><div class="spinner"></div></div>
+            <div id="detail-content">
+                <div class="detail-header">
+                    <img id="detail-image" src="" alt="">
+                    <div class="detail-title">
+                        <h1 id="detail-name"></h1>
+                        <span class="symbol" id="detail-symbol"></span>
+                    </div>
+                </div>
+                <div class="chart-section">
+                    <h2>Grafik Harga Historis</h2>
+                    <div class="time-selector" id="time-selector">
+                        <button data-days="1" class="time-button active">24 Jam</button>
+                        <button data-days="7" class="time-button">7 Hari</button>
+                        <button data-days="30" class="time-button">1 Bulan</button>
+                        <button data-days="180" class="time-button">6 Bulan</button>
+                        <button data-days="365" class="time-button">1 Tahun</button>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="detailChart"></canvas>
+                    </div>
+                </div>
+                <div class="detail-stats-grid" id="detail-stats">
+                    <!-- Akan diisi oleh JS -->
+                </div>
+                <div class="detail-description">
+                    <h2>Tentang</h2>
+                    <p id="detail-description-text"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Dashboard Kripto by WHO-AM-I-404</p>
+            <div class="social-links">
+                <a href="https://github.com/WHO-AM-I-404" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com/WHO-AM-I-404" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:contact@who-am-i-404.dev" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- File JavaScript Eksternal -->
+    <script src="script.js"></script>
+</body>
+</html>
